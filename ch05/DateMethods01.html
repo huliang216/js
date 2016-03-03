@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+    /**
+     * 日期方法 -
+     *
+     */
+
+     (function() {
+        var date = new Date("9/1/2014");
+        console.log(date);
+
+        console.log(Date.parse("9/1/2014"));
+        console.log(Date.parse(2014,11,21));
+        console.log(Date.UTC(2014,10,21));
+
+        var now = new Date();
+        console.log(now.getTime());
+        console.log(now.getFullYear());
+        console.log(now.getMonth());
+        console.log(now.getDate());
+        console.log(now.getDay());
+        console.log(now.getHours());
+        console.log(now.getMinutes());
+        console.log(now.getSeconds());
+
+     })();
+
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

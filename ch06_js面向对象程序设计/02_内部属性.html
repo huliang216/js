@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>内部属性</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        'use strict';
+
+        /**
+         * 数据属性: Configuration, Writable, Enumerable, Value
+         */
+
+        var person = {};
+        
+        //定义writable: false，不可修改
+        Object.defineProperty(person, "name", {
+            writable: false,
+            value: "Leon"
+        });
+
+        console.log(person.name);
+        // person.name = "Hlkl"; //出错
+        console.log(person.name); 
+
+        //configrable: false
+        Object.defineProperty(person, "age", {
+            configrable: true,
+            value: "20"
+        });
+
+        // delete person.age; //出错，严格模式
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

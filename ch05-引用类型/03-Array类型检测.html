@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>Array类型检测</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        //类型检测，instanceof关键字
+        var colors = ["red", "blue"];
+        console.log(colors instanceof Array);
+
+        //frame框架间传值，Array有不同的构造函数，instanceof检测会有问题
+        //ie9+, chrom, firefox , Array.isArray()检测，忽略执行环境
+        var isArray = Array.isArray(colors);
+        console.log("parent: " + isArray);
+
+
+    </script>
+</head>
+<body>
+    <iframe src="./03-ArrayFrame.html" frameborder="0"></iframe>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>原型模式</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        /**
+         * 原型模式
+         *   Person.prototype.isPrototypeOf(instance)判断实例内部属性[[Prototype]]是否有指向原型.
+         *   Object.getPrototypeOf(instance) 获取实例的[[Prototype]]
+         */
+
+        function Person(name, age, job) {
+            this.name = name;
+            this.age = age;
+            this.job = job;
+        }
+        Person.height = 170;
+        Person.prototype.sayName = function() {
+            console.log(this.name);
+        }
+
+        var p1 = new Person("hl", 25, "software engineer");
+        p1.sayName();
+
+        //判断实例内部属性[[Prototype]]是否有指向原型
+        console.log(Person.prototype.isPrototypeOf(p1))
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

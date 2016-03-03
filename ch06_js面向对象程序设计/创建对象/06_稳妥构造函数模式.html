@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>稳妥构造函数模式</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        /**
+         * 稳妥构造函数模式创建对象：不适应this关键字
+         * 
+         */
+        
+        function Person(name, age, job) {
+            var o = new Object();
+            //
+            o.sayName = function() {
+                console.log(name);
+            };
+
+            return o;
+        }
+
+        var p1 = new Person("Leon", 25, "software engineer");
+        p1.sayName();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

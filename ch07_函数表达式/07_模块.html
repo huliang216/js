@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>模块模式</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        /**
+         * 模块模式，建立模块
+         */
+        
+        var application = function() {
+            // 私有变量和函数
+            var components = new Array();
+            components.push(new Object());
+                        
+            return {
+                getComponentCount: function() {
+                    return components.length;
+                },
+
+                registerComponent: function(component) {
+                    if ("object" == typeof component) {
+                        components.push(component);
+                    }
+                }
+            };
+        }();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

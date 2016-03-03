@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>构造函数模式</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        // 'use strict';
+        /**
+         * 构造函数模式
+         */
+        var name = "";
+        var age = "";
+        var job = "";
+
+        function Person(name, age, job) {
+            this.name = name;
+            this.age = age;
+            this.job = job;
+            this.sayName = function() {
+                console.log("My name is " + this.name);
+            };
+        }
+
+        var p1 = new Person("Leon", 20, "Software Engineer");
+        var p2 = new Person("Sam", 22, "Doctor");
+
+        console.log(p1 instanceof Person);
+        p1.sayName();
+
+        //当做普通函数调用
+        Person("Hello", 33, "Javascript"); // use strict 下报错
+        sayName();
+
+        var o = new Object();
+        Person.call(o, "Kristen", 29, "Teacher");
+        o.sayName();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

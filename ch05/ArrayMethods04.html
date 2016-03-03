@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+    /**
+     * 数组方法 - 操作方法
+     *  concat() 返回一个新数组，它将当前数组复制一份，然后将参数添加到复制数组的末尾,返回复制的数组。
+     *  slice(start， end)  传入参数，从指定位置截取数组，返回的截取数组， 与string的substring()类似.
+     *  splice(start, end, o1, o2, ...) 从指定位置删除元素，再插入后续参数 , 返回删除的元素数组，原数组改变
+     */
+    var colors = ["red", "green", "blue"];
+    var numbers = [1, 3, 4, 2, 5, 11, 22, 33];
+
+    //参数中有数组，将数组每一项添加到新数组
+    var newColors = colors.concat("white", "black", ["orange", "gray"]);
+   
+    console.log("colors = " + colors);
+    console.log( newColors);
+
+    var spNumbers = numbers.splice(2, 3, 101, 202, 303);
+
+    console.log(numbers.toString());
+    console.log(spNumbers.toString());
+
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>静态私有变量</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        /**
+         * 通过在私有作用域中定义私有变量和函数，创建特权方法
+         */
+        
+        var Person;
+        
+        (function() {
+            //name为所有实例共享的静态变量
+            var name = "";
+
+            //Person 构造函数
+            Person = function(value) {
+                name = value;
+            }
+
+            //闭包，访问name
+            Person.prototype.setName = function(value) {
+                name = value;
+            };
+
+            Person.prototype.getName = function() {
+                return name;
+            };
+
+        })();
+
+        var p1 = new Person("Leon");
+        console.log(p1.getName());
+
+        var p2 = new Person("renpiaomiao");
+        console.log(p1.getName());
+        console.log(p2.getName());
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

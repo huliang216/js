@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>递归</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        /**
+         * 函数递归
+         */
+        
+        /**
+         * 递归相加
+         * @param {[type]} num [description]
+         */
+        function add(num) {
+            if (num <= 0) {
+                return 0;
+            }
+            return num + add(num - 1);
+        }
+
+        // var otherAdd = add;
+        // add = null;
+
+        console.log(add(10));
+
+        //比较好的实现
+        var factorial = (function f(num) {
+            if (num <= 1) {
+                return 1;
+            }
+            return num * f(num-1);
+        });
+
+        console.log(factorial(5));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

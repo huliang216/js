@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>原型模式</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        /**
+         * 原型模式3
+         *   判断属性是原原型属性还是实例属性
+         *       hasOwnProperty() 判断是否是原型属性  
+         */
+        
+        function Person(name, age) {
+            
+        }
+
+        Person.prototype.job = "Software Engineer";
+
+        var p1 = new Person("Leon", 25);
+        p1.name = "任缥缈";
+
+        console.log(p1.hasOwnProperty("name")); //true 来自实例
+        console.log(p1.hasOwnProperty("job")); //false 来自原型
+
+        //判断实例属性
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

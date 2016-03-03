@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>对象基础</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        var person = new Object();
+        person.name = "Leon";
+        person.age = 24;
+        person.job = "Software Engineer";
+
+        person.sayName = function() {
+            console.log(this.name);
+        }
+
+        person.sayName();
+
+        var person2 = {
+            name: "hlkl",
+            age: 25,
+            sayName2: function() {
+                console.log(this.name);
+            }
+        };
+
+        person2.sayName2();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Element</title>
+    <style></style>
+    
+</head>
+<body>
+    <div id="mydiv" ></div>
+    <ul id="ul">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <script type="text/javascript" >
+        var mydiv = document.getElementById("mydiv");
+        mydiv.setAttribute("data-ref", "mydivAttr");
+        console.log(mydiv.getAttribute("data-ref"));
+
+        mydiv.id = "mydiv_2";
+        console.log(mydiv.attributes);
+
+        var ul = document.getElementById("ul");
+        console.log(ul.childNodes);
+        for (var i=0, len=ul.childNodes.length; i<len; i++) {
+            if (ul.childNodes[i].nodeType == 1) {
+
+            }
+        }
+    </script>
+</body>
+</html>
+
+

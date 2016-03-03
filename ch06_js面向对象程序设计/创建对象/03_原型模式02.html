@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>原型模式</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        /**
+         * 属性搜索过程: 实例->原型
+         *     可以通过实例访问原型中的值，但是不能通过实例修改原型中的值
+         */
+        
+        function Person() {
+
+        }
+
+        Person.prototype.name = "Nicholas";
+        Person.prototype.age = 29;
+        Person.prototype.job = "Software Engineer";
+        Person.prototype.sayName = function() {
+            console.log(this.name);
+        };
+
+        var p1 = new Person();
+        var p2 = new Person();
+        p1.name = "Grey";
+
+        console.log(p1.name);
+        console.log(p2.name);
+
+        delete p1.name; //删除实例属性
+        console.log(p1.name); // Nicholas 
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

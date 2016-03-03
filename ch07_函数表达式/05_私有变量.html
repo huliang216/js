@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>私有变量</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        /**
+         * 私有变量
+         * 特权方法：有权访问私有变量和函数的公有方法称为特权方法。
+         */
+        
+        function Person(name) {
+            this.setName = function(value) {
+                name = value;
+            };
+
+            this.getName = function() {
+                return name;
+            };
+
+        }
+
+        var person = new Person("Leon");
+        console.log(person.getName()); //Leon
+
+        person.setName("任缥缈");
+        console.log(person.getName()); //任缥缈
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

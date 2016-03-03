@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>原型式继承</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        /**
+         * 原型式继承 : 对象的浅复制
+         */
+
+        function object(o) {
+            function F() {}
+            F.prototype = o;
+            return new F();
+        }
+
+        var person = {
+            name: "Leon",
+            age: 24
+        };
+
+        var anotherPerson = object(person);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

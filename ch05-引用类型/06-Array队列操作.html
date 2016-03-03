@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>Array队列操作</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+    /**
+     * 队列：先进后出
+     * 方法：shift() 移除数组首个元素
+     *       unshift() 在数组前面添加元素
+     */
+
+    var colors = ["red", "orange", "yellow"];
+
+    //返回移除元素
+    var val = colors.shift();
+    console.log(val);
+    console.log(colors); // orange, yellow
+
+    //返回数组长度
+    var cl = colors.unshift("purple");
+    console.log(cl);
+    console.log(colors);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

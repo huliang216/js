@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>Array排序</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        /**
+         * 排序方法
+         * sort() 正排序
+         * reverse() 反排序
+         */
+
+        var numbers = [1, 4, 3, 2, 5];
+        numbers.sort();
+        console.log(numbers);
+        numbers.reverse();
+        console.log(numbers); // 反向排序
+
+        var sortFunc = function(o1, o2) {
+            return o1 - o2;
+        }
+        var numStrs = ["2", "10", "3", "29", "33"]
+        console.log(numStrs.sort(sortFunc));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

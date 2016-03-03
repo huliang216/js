@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>Array类型</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        //创建
+        var letters = new Array("A", "B", "C");
+        console.log(letters);
+        console.log(typeof letters); //Object
+
+        console.log(letters[0]);
+
+        letters[0] = "X";
+        console.log(letters[0]);
+
+        letters[letters.length] = 'G';
+        letters.push("H","B","J");
+        console.log(letters);
+
+        //字面量创建
+        var colors = ["red", "blue", "orange"];
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

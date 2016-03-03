@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>title</title>
+</head>
+<body> 
+
+    <script type="text/javascript" >
+        var styleElement = document.createElement("style");
+        style.css
+        //var style = document.createTextNode("div{color:red}");
+        styleElement.appendChild(style);
+        var head = document.getElementsByTagName("head")[0];
+        head.appendChild(styleElement);
+
+        var body = document.body;
+        var div = document.createElement("div");
+        var text = document.createTextNode("div text");
+        var text2 = document.createTextNode("div2 text");
+        var script = body.getElementsByTagName("script")[0];
+        div.appendChild(text);
+        div.appendChild(text2);
+        body.insertBefore(div, script);
+
+        console.log(div.childNodes.length);
+
+        document.body.appendChild(div);
+            
+    </script>
+</body>
+</html>

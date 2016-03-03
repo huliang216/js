@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+    /**
+     * 数组方法 - 排序 sort() reverse()
+     * sort() 方法会将元素调用toStrng()方法后再比较,比较的是字符串
+     */
+    var colors = ["red", "green", "blue", "black", "White"];
+    var numbers = [1, 3, 4, 2, 5, 11, 22, 33];
+   
+   console.log("numbers after sort = " + numbers.sort(compare));
+   console.log("colors after sort = " + colors.reverse());
+
+   function compare(val1, val2) {
+        return val1 - val2;
+   }
+
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

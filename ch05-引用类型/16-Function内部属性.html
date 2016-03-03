@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>Function内部属性 arguments,this</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        "use strict";
+
+        /**
+         * function 内部属性：this，arguments
+         *
+         */
+        /**
+         * 阶乘函数
+         * @param  {[type]} num [阶乘数]
+         * @return {[type]}     [description]
+         */
+        function factorial(num) {
+            if (num <= 1) {
+                return 1;
+            } else {
+                return num * factorial(num - 1);
+            }
+
+        }
+
+        function factorial2(num) {
+            if (num <= 1) {
+                return 1;
+            } else {
+                // strict 模式报错
+                return num * arguments.callee(num - 1);
+            }
+        }
+        //console.log(factorial2(5));
+
+        var factorial3 = function f(num) {
+            if (num <= 1) {
+                return 1;
+            } else {
+                // 兼容严格模式
+                return num * f(num - 1);
+            }
+        };
+        console.log(factorial3(5));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

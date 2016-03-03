@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>RegExp exec()方法</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        var text = "mom and dad and baby";
+        var pattern = /mom( and dad (and baby)?)?/gi;
+        var matches = pattern.exec(text);
+        /**console.log(matches.input);
+        console.log(matches.index);
+        console.log(matches[0]);
+        console.log(matches[1]);
+        console.log(matches[2]);**/
+
+        /**
+         * 捕获组
+         */
+        var regexp = /(\{\d+\})+/g;
+        var msg = "你的{0}在{1}内只能操作{3}次";
+        var match = regexp.exec(msg);
+        console.log(match[0]);
+
+        match = regexp.exec(msg);
+        console.log(match[0]);
+        match = regexp.exec(msg);
+        console.log(match[0]);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+    /**
+     * 数组方法 - 迭代方法
+     * 方法都有两个参数：处理函数、运行函数的作用域对象。处理函数含3个参数：数组项的值、该项位置、数组
+     *  every() ，对每一项执行给定的函数，每一项都返回true，结果返回true。
+     *
+     */
+    var numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+    var everyResult = numbers.every(function(item, index, array) {
+        return item >0;
+    });
+
+    console.log("everyResult = " + everyResult); // 返会boolean值
+
+    /**
+     * filter() 过滤出符合条件的记录，返回过滤结果
+     */
+    var filterResult = numbers.filter(function(item, index, array) {
+        return item >2;
+    });
+
+    console.log("filterResult = " + filterResult); // 返回过滤出的结果集
+    /**
+     * map()
+     */
+
+     var mapResult = numbers.map();
+
+
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

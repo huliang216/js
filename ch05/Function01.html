@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+    /**
+     * function 函数 - 每个函数都是Function对象的实例。
+     *   函数是对象，函数名是指向函数对象的指针。
+     *
+     *
+     */
+     /**函数声明**/
+     function sum (num1, num2) {
+        return num1 + num2;
+     }
+
+     /**函数表达式**/
+     var sum = function(num1, num2) {
+        return num2 + num1;
+     };
+
+     /**函数对象
+      *   Function: 参数1，参数2，... ,函数体
+      **/
+     var func = new Function("num1", "num2", "return num1 + num3");
+
+     console.log(sum(10, 20));
+
+     var anotherSum = sum;
+     console.log(anotherSum(20, 30));
+
+     sum = null;
+     console.log(anotherSum(20, 25));
+
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

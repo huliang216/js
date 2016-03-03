@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+    /**
+     * 函数的参数
+     * 参数的传递是值传递，引用类型参数传递的是引用类型指针的值。
+     */
+
+     function setName(obj) {
+     	obj.name = "Nick";
+
+     	obj = new Object(); // 重新赋值新对象，下面输出还是Nick
+     	obj.name = "Hugo";
+     }
+
+     var person = new Object();
+     setName(person);
+     console.log(person.name); // Nick
+
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

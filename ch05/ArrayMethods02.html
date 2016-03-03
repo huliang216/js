@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+    /**
+     * 数组方法
+     */
+    var colors = ["red", "green", "blue"];
+
+    colors.push("orange");
+
+    var o = colors.shift(); // 移除并数组第一项，并返回移除项
+    console.log(o)
+    console.log(colors);
+
+    // 在数组开头添加元素，返回数组长度，类似push()
+    var res = colors.unshift("whift", "black"); 
+    console.log("res = " + res); // 5
+    console.log("colors = " + colors); //whift,black,green,blue,orange
+
+    var popObj = colors.pop(); // orange
+    console.log("popObj = " + popObj);
+    console.log("colors = " + colors); //whift,black,green,blue
+
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

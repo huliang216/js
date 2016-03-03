@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>字面了定义原型</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        'use strict';
+        /**
+         * 字面量定义原型, constructor属性被改变 
+         */
+        
+        function Person() {}
+
+        Person.prototype = {
+            name: "Loen",
+            age: 25,
+            sayName: function() {
+                console.log(this.name);
+            }
+        };
+
+        var p1 = new Person();
+
+        console.log(p1 instanceof(Object)); // true
+        console.log(p1 instanceof(Person)); // true
+        console.log(p1.constructor == Person); // false 原型的contructor属性
+        console.log(p1.constructor == Object); // true 原型的contructor属性
+
+       
+        Person.prototype.name = "任缥缈";
+
+        console.log(p1.name);
+
+        //重写原型对象
+        var friend = new Person();
+        Person.prototype = {
+            name: "Hlkl",
+            age: 22,
+            sayName: function() {
+                console.log("Hello " + this.name);
+            }
+        };
+
+        friend.sayName();
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>Array 其他操作</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        /**
+         * 其他操作方法：
+         *     concat() 复制当前数组，将参数添加到数组末尾，如果参数是数组添加数组每一项，返回新数组。
+         *     slice(start, end) 基于当前数组创建新数组，复制数组的部分，返回复制后的新数组。参数有负数，数组长度加上该负数。返回复制的数组。
+         *     splice(delStart, delLength, insertItem1, insertItem2, ...) 删除当前数组指定位置元素，同时添加元素到该位置。返回数组删除的项,没有删除返回空。
+         */
+
+        var letters = ["A", "B", "C"];
+
+        var newLetters = letters.concat("X", ["Y", "Z"], "8");
+        console.log(newLetters);//["A", "B", "C", "X", "Y", "Z", "8"]
+
+        var newLetters_01 = newLetters.slice(2, 4);
+        console.log(newLetters_01); // ["C", "X"]
+
+        // splice() 插入，第二个参数 0
+        var values = ["H", "J", "K", "L", "O", "P"];
+        var newVals = values.splice(3, 0 ,"M","N");
+        console.log(values); //["H", "J", "K", "M", "N", "L", "O", "P"]
+        console.log(newVals); // []
+
+        // splice() 删除 ,只写前面两个参数,从第一个参数开始删除，第二个参数为删除个数
+        values = ["H", "J", "K", "L", "O", "P"];
+        values.splice(2, 4);
+        console.log(values); //["H", "J"]
+
+        //splice() 替换
+        values = ["H", "J", "K", "L", "O", "P"];
+        values.splice(2, 4, "0", "1", "2");
+        console.log(values); //["H", "J", "0", "1", "2"]
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

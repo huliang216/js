@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+    /**
+     * function - 函数的属性和方法
+     * call() , apply() 可改变函数执行的作用域
+     * call(scope, arguments|Array) 参数1：调用作用域，参数2：数组或arguments参数。
+     * apply(scope, arg1, arg2, ...) 参数1： 调用作用域，参数2、3、...：传入参数。
+     */
+
+    window.color = "red";
+    var o = {color: "blue"};
+
+    function sayColor() {
+        console.log(this.color);
+    }
+
+    sayColor.apply(this);
+    sayColor.apply(o);
+
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

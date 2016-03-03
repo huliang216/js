@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+    /**
+     * 数组
+     */
+     var colors = new Array();
+     console.log(colors instanceof Array);
+
+     console.log(Array.isArray(colors));
+
+     colors[colors.length] = "blue";
+     colors[colors.length] = "green";
+     colors[colors.length] = "red";
+
+     var colorsStr = colors.toString();
+     console.log(typeof colorsStr);
+     console.log((typeof colors.valueOf()) + " , " + (colors instanceof Array));
+
+     var person1 = {
+     	toString : function() {
+     		return "person1 Nikolaos";
+     	}
+     };
+
+     var person2 = {
+     	toString : function() {
+     		return "person2 Nick";
+     	}
+     };
+
+     var persons = new Array(person1, person2);
+     console.log(persons.toString());
+
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

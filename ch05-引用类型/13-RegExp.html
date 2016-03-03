@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>RegExp正则</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        /**
+         * 正则表达式
+         *   var expression = /pattern/ flags;
+         *   eg: var exp = /\d/g;
+         */
+
+        var msg = "bat cat data";
+        var regexp = /at/;
+        var res = regexp.test(msg);
+        console.log(res);
+
+        //实例属性
+        var pattern1 = /\[bc\]at/i;
+        console.log(pattern1.global);
+        console.log(pattern1.ignoreCase);
+        console.log(pattern1.multiline);
+        console.log(pattern1.source);
+
+        var str = "your \nname is Nick.";
+        var reg = /^name .*$/gm;
+        console.log(reg.test(str));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

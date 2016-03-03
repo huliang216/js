@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>节点</title>
+</head>
+<body>
+    <div id="node">node</div>
+
+    <div id="node2">
+        <ul id="node_ul"><li>1</li><li>2</li><li>3</li></ul>
+    </div>
+
+    <div id="node3"><span>span</span><p>p</p><input type="text" value="input"></div>
+
+    <script type="text/javascript" >
+        /**
+         * 操作节点的方法，传到方法中的节点已经是文档的一部分，那该节点会从原来位置移动到新位置。
+         */
+        
+        var nodeDiv = document.getElementById("node");
+        // console.log(nodeDiv.nodeType);  // 1
+        // console.log(nodeDiv.nodeName);
+        // console.log(nodeDiv.nodeValue); //null, 元素节点为null
+
+        var node2 = document.getElementById("node_ul");
+        var nodelist = node2.childNodes;
+        // console.log(nodelist.length);
+
+        // console.log(nodelist instanceof(Array)); // false
+        // console.log(nodelist instanceof(NodeList)); // true
+
+        var array = Array.prototype.slice.call(nodelist,0);
+        // console.log(array);
+
+        //nodeDiv第一个元素替换为node2
+        // nodeDiv.replaceChild(node2, nodeDiv.childNodes[0]);
+
+        var node3 = document.getElementById("node3");
+        console.log(node3.hasChildNodes());
+        node3.replaceChild(node, node3.lastChild);
+        node3.insertBefore(node, node3.childNodes[1]);
+        node3.removeChild(node3.lastChild);
+
+        console.log(node3.cloneNode(true));
+
+    </script>
+
+</body>
+</html>

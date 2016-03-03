@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>继承-原型链</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        /**
+         * 原型链继承：子类原型指向超类
+         */
+
+        function SuperType() {
+            this.property = true;
+        }
+
+        SuperType.prototype.getSuperTypeValue = function() {
+            return this.property;
+        };
+
+        function SubType() {
+            this.subProperty = 0;
+        }
+
+        //继承，指定原型
+        SubType.prototype = new SuperType();
+
+        //添加新方法
+        SubType.prototype.getSubTypeValue = function() {
+            return this.subProperty;
+        };
+        //重写父类方法
+        SubType.prototype.getSuperTypeValue = function() {
+            return false;
+        };
+
+        var instance = new SubType();
+        console.log(instance.getSuperTypeValue());//true
+        console.log(instance instanceof Object); //true
+        console.log(instance instanceof SubType); //true
+        console.log(instance instanceof SuperType); //true
+        console.log(instance.getSubTypeValue()); //0
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

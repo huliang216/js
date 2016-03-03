@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>原型模式04</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        /**
+         * 原型与 in 操作符
+         *  in 判断实例是否能访问到
+         *  
+         */
+        
+        function Person() {
+
+        }
+
+        Person.prototype.name = "任缥缈";
+        Person.prototype.age = 29;
+        Person.prototype.job = "剑客";
+        Person.prototype.sayName = function() {
+            console.log(this.name);
+        };
+
+        var p1 = new Person();
+        var p2 = new Person();
+
+        console.log(p1.hasOwnProperty("name")); //false , name为原型属性
+        console.log("name" in p1); //true , 实例可访问
+
+        p1.name = "神蛊温皇";
+        console.log(p1.hasOwnProperty("name")); //true , name现在是实例属性
+        console.log("name" in p1);
+
+        delete p1.name;
+        console.log(p1.hasOwnProperty("name")); //false , 实例属性name被delete , name现在是实例属性
+        console.log("name" in p1); //true
+
+        /**
+         * 判断原型属性
+         * @param  {[type]}  obj  [对象]
+         * @param  {[type]}  name [属性名]
+         * @return {Boolean}      [description]
+         */
+        function hasPrototypeProperty(obj, name) {
+            return !obj.hasOwnProperty(name) && (name in obj);
+        }
+
+        console.log("--" + hasPrototypeProperty(p1, name));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

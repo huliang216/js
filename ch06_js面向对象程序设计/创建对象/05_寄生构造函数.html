@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>寄生构造模式</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        'use strict';
+        /**
+         * 寄生构造函数模式： 
+         */
+        
+        function Person(name, age, job) {
+            var o = new Object();
+            o.name = name;
+            o.age = age;
+            o.job = job;
+            o.sayName = function() {
+                console.log(this.name);
+            };
+            return o;
+        }
+
+        var friend = new Person("Leon", 25, "Software");
+
+        console.log(friend instanceof(Person)); // false
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

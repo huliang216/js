@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title></title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+       var colors = window.parent.colors;
+       console.log(colors );
+       //不同的frame有不同的执行环境，拥有不同的Array构造函数，此处为false
+       console.log(colors instanceof Array); //false
+
+       var isArray = Array.isArray(colors);
+        console.log("frame: " + isArray);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

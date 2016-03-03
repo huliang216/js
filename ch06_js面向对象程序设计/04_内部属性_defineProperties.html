@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>定义多个属性特性</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        'use strict';
+        /**
+         * 一次定义多个特性: Object.defineProperties();
+         */
+
+        var book = {};
+
+        Object.defineProperties(book, {
+            _year: {
+                value: 2004
+            },
+
+            edition: {
+                value: 1
+            },
+
+            year: {
+                set: function(newValue) {
+                    if (newValue > 2004) {
+                        this._year = newValue;
+                        this.edition += newValue - 2004;
+                    }
+                },
+
+                get: function() {
+                    return this._year;
+                }
+            }
+        });
+
+        console.log(book._year);
+
+        var descriptor = Object.getOwnPropertyDescriptor(book, "year");
+        console.log(descriptor);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

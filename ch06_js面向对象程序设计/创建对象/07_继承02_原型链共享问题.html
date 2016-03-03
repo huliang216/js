@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>原型链-原型共享问题</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        /**
+         * 原型链继承：原型引用类型属性共享问题
+         */
+        
+        function Super() {
+            this.colors = ["red", "green"];
+        }
+
+        function Sub() {
+
+        }
+
+        Sub.prototype = new Super();
+
+        var instance1 = new Sub();
+        instance1.colors.push("yellow");
+
+        var instance2 = new Sub();
+        console.log(instance2.colors);// red,green,yellow
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

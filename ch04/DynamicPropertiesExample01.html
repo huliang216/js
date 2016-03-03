@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+    /**
+     * 引用类型
+	 * 复制是引用复制，引用同一个对象。
+     */
+    var person = new Object();
+    person.name = "Nick";
+
+    console.log(person.name); // Nick
+
+    var person2 = person;
+    person.name = "John";
+
+    console.log(person2.name); // John, 说明person、person2指向同一个对象
+
+    person2.name = "Jim";
+
+    console.log(person.name); // Jim
+
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

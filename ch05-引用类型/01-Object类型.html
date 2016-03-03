@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>Object</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        var person = new Object();
+        person.age = 27;
+        person.name = "Leon";
+        person.print = function() {
+            console.log(this.name + "'s age : " + this.age);
+        }
+
+        console.log("name : " + person.name);
+        console.log("age : " + person.age);
+        person.print();
+
+        //字面量
+        var child = {
+            age: 27,
+            name: "Jack",
+            print: function() {
+                console.log("the child named " + this.name + " age is " + this.age);
+            }
+        };
+
+        child.print();
+
+        console.log(child["age"]);
+        //[]方式访问，传递变量
+        var propName = "age";
+        console.log(child[propName]);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

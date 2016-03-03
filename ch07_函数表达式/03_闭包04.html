@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>闭包中的this</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        /**
+         * 闭包中的this，this的改变
+         * 
+         */
+        
+        var name = "the window";
+        var object = {
+            name: "the object",
+            getNameFunc: function() {
+                return this.name;
+            }
+        };
+
+        console.log(object.getNameFunc()); // the object
+        console.log((object.getName = object.getNameFunc)()); // the window
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

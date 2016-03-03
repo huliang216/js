@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+    /**
+     * function - 函数的属性和方法
+     * bind() ：创建一个函数的实例，其this值会绑定到传给bind()函数的参数
+     */
+
+    window.color = "red";
+    var o = { color: "blue" };
+
+    function sayColor() {
+        console.log(this.color);
+    }
+
+    // sayColorNew 的this绑定到了对象o，尽管在全局作用域下调用，this还是o
+    var sayColorNew = sayColor.bind(o);
+
+    sayColorNew(); // blue
+
+
+
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

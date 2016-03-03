@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>组合原型和构造函数模式</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        'use strict';
+
+        /**
+         * 组合使用构造函数模式和原型模式： 构造函数定义实例属性，原型定义共享属性和方法
+         */
+        function Person(name, age, job) {
+            this.name = name;
+            this.age = age;
+            this.job = job;
+            this.friends = ["Shelby", "Court"];
+        }
+
+        Person.prototype = {
+            constructor: Person,
+            sayName: function() {
+                console.log(this.name);
+            }
+        };
+
+        var p1 = new Person("Leon", 25, "Software Engineer");
+        var p2 = new Person("Greg", 24, "Doctor");
+
+        p1.friends.push("Van");
+
+        console.log(p1.friends); //["Shelby", "Court", "Van"]
+        console.log(p2.friends); //["Shelby", "Court"]
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

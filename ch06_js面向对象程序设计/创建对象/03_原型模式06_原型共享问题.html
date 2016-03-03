@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>原型模式-原型模式的共享问题</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        'use strict';
+        /**
+         * 原型模式：原型属性和方法是所有实例共享的，属性为引用类型会出现共享问题
+         * 
+         */
+        
+        function Person() {}
+
+        Person.prototype = {
+            name: "Leon",
+            age: 25,
+            friends: ["Jack", "Sam"],
+            sayName: function() {
+                console.log(this.name);
+            }
+        };
+
+        var p1 = new Person();
+        var p2 = new Person();
+
+        p1.friends.push("Van");
+        console.log(p1.friends); //["Jack", "Sam", "Van"]
+        console.log(p2.friends); //["Jack", "Sam", "Van"]
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

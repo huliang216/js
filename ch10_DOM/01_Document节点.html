@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Document</title>
+    <style></style>
+    
+</head>
+<body>
+    <div id="div"></div>
+    <div id="div2"></div>
+
+    <script type="text/javascript" >
+        /**
+         * document.documentElement 指向html元素
+         * 
+         */
+        
+        var html = document.documentElement; // html元素
+        console.log(html);
+
+        var body = document.body; // body元素
+        console.log(body);
+
+        var title = document.title; // 页面title
+        console.log(title);
+        document.title = "html Document";
+
+        var divs = document.getElementsByTagName("div");
+
+    </script>
+</body>
+</html>

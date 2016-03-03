@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>javascript-模仿块级作用域</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        /**
+         * javascript没有块级作用域, 使用函数表达式模拟块级作用域
+         */
+        
+        function printNumber() {
+             for (var i=0; i<10; i++) {
+
+             }
+
+             console.log(i);
+         };
+
+         printNumber(); // 10
+
+        //块级作用域
+        function printNumber2() {
+            (function(){
+                for (var i=0; i<10; i++) {
+
+                }
+            })();
+
+            // console.log(i); // 出错，无法访问到i
+        }
+
+        printNumber2();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+    /**
+     * 检测类型
+     * 1. typeof 检测变量类型,可以检测基本类型。但引用类型全部返还object，无法判断具体类型。
+     * 2. instanceof 判断对象属于什么类型。
+     */
+     var str = "string";
+     var num = 10;
+     var undef ;
+     var n = null
+     var o = new Object();
+
+     console.log(typeof str); // "string"
+     console.log(typeof num); // "number"
+     console.log(typeof undef); // "undefined"
+     console.log(typeof n); // "object"
+     console.log(typeof o); // "object"
+
+
+
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

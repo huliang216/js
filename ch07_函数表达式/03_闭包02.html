@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>闭包</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style></style>
+    <script type="text/javascript" >
+        /**
+         * 闭包：闭包只能返回包含函数中变量的最后一个值。
+         */
+
+        function createArray() {
+            var array = new Array();
+
+            for(var i=0; i<5; i++) {
+                array[i] = function() {
+                    return i;
+                };
+            }
+
+            return array;
+        }
+
+        var array= createArray();
+        console.log(array[0]());
+        console.log(array[1]());
+
+        function createArray2() {
+            var array = new Array();
+
+            for(var i=0; i<5; i++) {
+                array[i] = function(num){
+                    return function() {
+                        return num;
+                    }
+                }(i);
+            }
+
+            return array;
+        }
+
+        var array2 = createArray2();
+        console.log(array2[0]());
+        console.log(array2[1]());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

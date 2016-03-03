@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>Array转换方法</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        var letters = ['h', 'e', 'l', 'l', 'o' ];
+        console.log(letters);
+        console.log(letters.toString());
+        console.log(letters.valueOf());
+
+        var person1 = {
+            name: "Leon",
+            age: 20,
+            toString: function() {
+                return this.name + "'s age is " + this.age;
+            }
+        };
+        var person2 = {name: "Leo", age: 22};
+
+        var persons = [person1, person2];
+        console.log(persons);
+
+        //调用每一项的toString
+        console.log(persons.toString());
+
+        //toString()默认以","拼接每一项，join()指定拼接字符
+        console.log(persons.join("|")); // 以'|'拼接
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>Array迭代</title>
+    <style type="text/css"></style>
+</head>
+<body>
+    <p id="log"></p>
+
+    <script type="text/javascript">
+        /**
+         * 迭代方法
+         * every(function(item, index, array){}) return boolean - 回调3个参数：当前元素，当前索引，数组。方法回调执行短路操作，return false不再往后迭代,所有回调返回true，结果返回true。
+         * filter(function(item, index, array){}) return array - 回调3个参数：当前元素，当前索引，数组。返回回调为true的元素组成的数组。
+         * forEach(function(item, index, array){}) no return - 回调3个参数：当前元素，当前索引，数组。遍历数组，无返回值。
+         * map(function(item, index, array){}) return array- 回调3个参数：当前元素，当前索引，数组。返回回调处理后的新数组。
+         */
+
+        //every()
+        var array = [1, 2, 3, 4, 5];
+        var everyResult = array.every(function(item, index, array) {
+            return item < 4;
+
+        });
+
+        console.log(everyResult);
+
+        //filter()
+        var filterArray = array.filter(function(item, index, array) {
+            return item > 3;
+        });
+        log("filterArray : " + filterArray);
+
+        //forEach()
+        array.forEach(function(item, index, array) {
+            log("forEach : " + index + " - " + item);
+        });
+
+        //map()
+        var mapArray = array.map(function(item, index, array) {
+            return item + 10;
+        });
+        log("map array : " + mapArray);
+
+        //=========================
+        //求和
+        var numbers = [10, 22, 33, 44];
+        var sum = numbers.reduce(function(prevResult, item, index, array) {
+            return prevResult + item;
+        });
+
+        log(sum);
+
+        var sum2 = function(numbers) {
+            var sum = 0;
+            for (var i in numbers) {
+                sum += numbers[i];
+            }
+            return sum;
+        }
+
+        log(sum2(numbers));
+
+
+        function log(msg) {
+            var el = document.getElementById("log");
+            el.innerHTML += ">> " + ( msg+"<br>");
+        }
+
+    </script>
+
+</body>
+</html>
